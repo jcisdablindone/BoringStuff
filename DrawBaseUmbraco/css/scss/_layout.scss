@@ -1,0 +1,29 @@
+//Sitewide layout
+
+//$grid-gutter: 6px; //Use this to adjust griddle
+@import "griddle";
+
+//Desktop grid
+@media (min-width: $desktop-min) {
+	@include griddle-build( 12, "--desktop");	
+}
+
+@media (min-width: $tablet-min) and (max-width: $tablet-max){
+	@include griddle-build( 2 3 , "--tablet");
+}
+
+@media (max-width: $mobile-max){
+	@include griddle-build( 2 , "--mobile")
+}
+
+body{
+	//limiting viewport width for devices that don't support media queries (mobile first)
+	max-width: $mobile-max;
+	@media (min-width: $tablet-min) {
+		max-width: none;
+	}
+}
+
+.grid img{
+	max-width: 100%;
+}

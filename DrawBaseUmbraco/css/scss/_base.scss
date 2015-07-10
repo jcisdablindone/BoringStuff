@@ -1,0 +1,47 @@
+@import "compass";
+
+//*Functions*//
+
+@function em($size, $context: $typeBase) {
+	@return ($size / $context) * 1em;
+}
+
+//**//
+
+//*Mixins*//
+
+//RGBA backgrounds with hex fallback;
+@mixin background-rgba($color, $opacity) {
+	background: $color;
+	background: rgba($color, $opacity);
+}
+
+//REM sized fonts with px fallback
+@mixin font-size-rem($size) {
+	font-size: $size;
+	font-size: $size / $typeBase * 1rem;
+}
+
+//Remove default styling from a list tag
+@mixin list-reset {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+//**//
+
+//*Variables*//
+
+//Layout
+
+$desktop-min: 960px;
+$tablet-max: $desktop-min - 1px;
+$tablet-min: 600px;
+$mobile-max: $tablet-min - 1px;
+
+//Type:
+
+$typeBase: 16px;
+
+//Colours
